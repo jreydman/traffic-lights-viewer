@@ -1,0 +1,1808 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "distance": 270,
+          "annotation": {
+            "metadata": {
+              "datasource_names": [
+                "lua profile"
+              ]
+            },
+            "datasources": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "weight": [
+              2.9,
+              0.6,
+              0.8,
+              0.7,
+              3.4,
+              4,
+              7.3,
+              2.9,
+              1.6,
+              0.2
+            ],
+            "nodes": [
+              354975685,
+              11290342400,
+              12093979660,
+              354975787,
+              10993451770,
+              10993451770,
+              1262388051,
+              2536406008,
+              12093979670,
+              1479437534,
+              354976166
+            ],
+            "distance": [
+              31.95856478,
+              7.145332761,
+              8.698300016,
+              7.821045866,
+              37.31459507,
+              44.31058492,
+              80.97120352,
+              32.20905235,
+              18.16655592,
+              1.446568268
+            ],
+            "duration": [
+              2.9,
+              0.6,
+              0.8,
+              0.7,
+              3.4,
+              4,
+              7.3,
+              2.9,
+              1.6,
+              0.2
+            ],
+            "speed": [
+              11,
+              11.9,
+              10.9,
+              11.2,
+              11,
+              11.1,
+              11.1,
+              11.1,
+              11.4,
+              7.2
+            ]
+          },
+          "duration": 26.4,
+          "summary": "вулиця Героїв Маріуполя",
+          "weight": 26.4,
+          "steps": [
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    318
+                  ],
+                  "location": [
+                    30.457821,
+                    50.37856
+                  ]
+                },
+                {
+                  "out": 2,
+                  "in": 0,
+                  "entry": [
+                    false,
+                    false,
+                    true
+                  ],
+                  "bearings": [
+                    120,
+                    165,
+                    315
+                  ],
+                  "location": [
+                    30.457347,
+                    50.378862
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.457821,
+                    50.37856
+                  ],
+                  [
+                    30.457523,
+                    50.378775
+                  ],
+                  [
+                    30.457447,
+                    50.378817
+                  ],
+                  [
+                    30.457347,
+                    50.378862
+                  ],
+                  [
+                    30.457273,
+                    50.378914
+                  ],
+                  [
+                    30.456925,
+                    50.379165
+                  ],
+                  [
+                    30.456517,
+                    50.379466
+                  ],
+                  [
+                    30.455775,
+                    50.380018
+                  ],
+                  [
+                    30.455477,
+                    50.380236
+                  ],
+                  [
+                    30.455309,
+                    50.380359
+                  ],
+                  [
+                    30.455296,
+                    50.380369
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 318,
+                "bearing_before": 0,
+                "location": [
+                  30.457821,
+                  50.37856
+                ],
+                "type": "depart"
+              },
+              "name": "вулиця Героїв Маріуполя",
+              "mode": "driving",
+              "weight": 26.4,
+              "duration": 26.4,
+              "distance": 270
+            },
+            {
+              "intersections": [
+                {
+                  "in": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    140
+                  ],
+                  "location": [
+                    30.455296,
+                    50.380369
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.455296,
+                    50.380369
+                  ],
+                  [
+                    30.455296,
+                    50.380369
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 320,
+                "location": [
+                  30.455296,
+                  50.380369
+                ],
+                "type": "arrive"
+              },
+              "name": "вулиця Героїв Маріуполя",
+              "mode": "driving",
+              "weight": 0,
+              "duration": 0,
+              "distance": 0
+            }
+          ]
+        },
+        {
+          "distance": 131.4,
+          "annotation": {
+            "metadata": {
+              "datasource_names": [
+                "lua profile"
+              ]
+            },
+            "datasources": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "weight": [
+              1.7,
+              1.8,
+              2.7,
+              2.6,
+              1.6,
+              1.4
+            ],
+            "nodes": [
+              1479437534,
+              354976166,
+              1259425975,
+              12093979660,
+              1438503804,
+              1259426067,
+              1259426266
+            ],
+            "distance": [
+              19.13743735,
+              20.18341173,
+              29.87629892,
+              28.60733357,
+              17.41130149,
+              16.18843915
+            ],
+            "duration": [
+              1.7,
+              1.8,
+              2.7,
+              2.6,
+              1.6,
+              1.4
+            ],
+            "speed": [
+              11.3,
+              11.2,
+              11.1,
+              11,
+              10.9,
+              11.6
+            ]
+          },
+          "duration": 11.8,
+          "summary": "вулиця Героїв Маріуполя",
+          "weight": 11.8,
+          "steps": [
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    319
+                  ],
+                  "location": [
+                    30.455296,
+                    50.380369
+                  ]
+                },
+                {
+                  "out": 2,
+                  "in": 1,
+                  "entry": [
+                    true,
+                    false,
+                    true
+                  ],
+                  "bearings": [
+                    45,
+                    135,
+                    315
+                  ],
+                  "location": [
+                    30.455118,
+                    50.380498
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.455296,
+                    50.380369
+                  ],
+                  [
+                    30.455118,
+                    50.380498
+                  ],
+                  [
+                    30.454925,
+                    50.380631
+                  ],
+                  [
+                    30.45465,
+                    50.380834
+                  ],
+                  [
+                    30.454386,
+                    50.381028
+                  ],
+                  [
+                    30.454227,
+                    50.381147
+                  ],
+                  [
+                    30.454078,
+                    50.381257
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 319,
+                "bearing_before": 0,
+                "location": [
+                  30.455296,
+                  50.380369
+                ],
+                "type": "depart"
+              },
+              "name": "вулиця Героїв Маріуполя",
+              "mode": "driving",
+              "weight": 11.8,
+              "duration": 11.8,
+              "distance": 131.4
+            },
+            {
+              "intersections": [
+                {
+                  "in": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    139
+                  ],
+                  "location": [
+                    30.454078,
+                    50.381257
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.454078,
+                    50.381257
+                  ],
+                  [
+                    30.454078,
+                    50.381257
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 319,
+                "location": [
+                  30.454078,
+                  50.381257
+                ],
+                "type": "arrive"
+              },
+              "name": "вулиця Героїв Маріуполя",
+              "mode": "driving",
+              "weight": 0,
+              "duration": 0,
+              "distance": 0
+            }
+          ]
+        },
+        {
+          "distance": 143.2,
+          "annotation": {
+            "metadata": {
+              "datasource_names": [
+                "lua profile"
+              ]
+            },
+            "datasources": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "weight": [
+              3.9,
+              3,
+              4.1,
+              1.1,
+              0.9
+            ],
+            "nodes": [
+              1259426067,
+              1259426266,
+              1256826738,
+              7568564677,
+              354975791,
+              3619121619
+            ],
+            "distance": [
+              42.20198485,
+              32.93015072,
+              45.917542,
+              11.95776409,
+              10.19307452
+            ],
+            "duration": [
+              3.9,
+              3,
+              4.1,
+              1.1,
+              0.9
+            ],
+            "speed": [
+              10.8,
+              11,
+              11.2,
+              10.9,
+              11.3
+            ]
+          },
+          "duration": 15,
+          "summary": "вулиця Героїв Маріуполя",
+          "weight": 15,
+          "steps": [
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    319
+                  ],
+                  "location": [
+                    30.454078,
+                    50.381257
+                  ]
+                },
+                {
+                  "out": 2,
+                  "in": 0,
+                  "entry": [
+                    false,
+                    false,
+                    true
+                  ],
+                  "bearings": [
+                    135,
+                    315,
+                    330
+                  ],
+                  "location": [
+                    30.452849,
+                    50.382158
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.454078,
+                    50.381257
+                  ],
+                  [
+                    30.45369,
+                    50.381544
+                  ],
+                  [
+                    30.453391,
+                    50.38177
+                  ],
+                  [
+                    30.452963,
+                    50.382079
+                  ],
+                  [
+                    30.452849,
+                    50.382158
+                  ],
+                  [
+                    30.452782,
+                    50.382239
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 319,
+                "bearing_before": 0,
+                "location": [
+                  30.454078,
+                  50.381257
+                ],
+                "type": "depart"
+              },
+              "name": "вулиця Героїв Маріуполя",
+              "mode": "driving",
+              "weight": 15,
+              "duration": 15,
+              "distance": 143.2
+            },
+            {
+              "intersections": [
+                {
+                  "in": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    152
+                  ],
+                  "location": [
+                    30.452782,
+                    50.382239
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.452782,
+                    50.382239
+                  ],
+                  [
+                    30.452782,
+                    50.382239
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 332,
+                "location": [
+                  30.452782,
+                  50.382239
+                ],
+                "type": "arrive"
+              },
+              "name": "вулиця Героїв Маріуполя",
+              "mode": "driving",
+              "weight": 0,
+              "duration": 0,
+              "distance": 0
+            }
+          ]
+        },
+        {
+          "distance": 119,
+          "annotation": {
+            "metadata": {
+              "datasource_names": [
+                "lua profile"
+              ]
+            },
+            "datasources": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "weight": [
+              1.7,
+              0.9,
+              0.7,
+              0.7,
+              3.4,
+              0.4,
+              2.9
+            ],
+            "nodes": [
+              354975791,
+              3619121619,
+              4794259328,
+              12094021520,
+              1252546789,
+              4794259325,
+              354976022,
+              4794259321
+            ],
+            "distance": [
+              18.64371925,
+              9.556452189,
+              7.564408184,
+              8.070695094,
+              38.12419583,
+              4.463645073,
+              32.55689325
+            ],
+            "duration": [
+              1.7,
+              0.9,
+              0.7,
+              0.7,
+              3.4,
+              0.4,
+              2.9
+            ],
+            "speed": [
+              11,
+              10.6,
+              10.8,
+              11.5,
+              11.2,
+              11.2,
+              11.2
+            ]
+          },
+          "duration": 10.7,
+          "summary": "вулиця Героїв Маріуполя, вулиця Докії Гуменної",
+          "weight": 10.7,
+          "steps": [
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    332
+                  ],
+                  "location": [
+                    30.452782,
+                    50.382239
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.452782,
+                    50.382239
+                  ],
+                  [
+                    30.452659,
+                    50.382387
+                  ],
+                  [
+                    30.452573,
+                    50.382453
+                  ],
+                  [
+                    30.452526,
+                    50.382514
+                  ],
+                  [
+                    30.452512,
+                    50.382586
+                  ],
+                  [
+                    30.452547,
+                    50.382928
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 332,
+                "bearing_before": 0,
+                "location": [
+                  30.452782,
+                  50.382239
+                ],
+                "type": "depart"
+              },
+              "name": "вулиця Героїв Маріуполя",
+              "mode": "driving",
+              "weight": 7.4,
+              "duration": 7.4,
+              "distance": 82
+            },
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "in": 1,
+                  "entry": [
+                    true,
+                    false,
+                    false
+                  ],
+                  "bearings": [
+                    0,
+                    180,
+                    210
+                  ],
+                  "location": [
+                    30.452547,
+                    50.382928
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.452547,
+                    50.382928
+                  ],
+                  [
+                    30.452552,
+                    50.382968
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "exit": 1,
+                "bearing_after": 4,
+                "bearing_before": 2,
+                "location": [
+                  30.452547,
+                  50.382928
+                ],
+                "modifier": "straight",
+                "type": "roundabout"
+              },
+              "name": "вулиця Докії Гуменної",
+              "mode": "driving",
+              "weight": 0.4,
+              "duration": 0.4,
+              "distance": 4.5
+            },
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "in": 1,
+                  "entry": [
+                    true,
+                    false,
+                    true
+                  ],
+                  "bearings": [
+                    0,
+                    180,
+                    345
+                  ],
+                  "location": [
+                    30.452552,
+                    50.382968
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.452552,
+                    50.382968
+                  ],
+                  [
+                    30.452601,
+                    50.383259
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "exit": 1,
+                "bearing_after": 5,
+                "bearing_before": 4,
+                "location": [
+                  30.452552,
+                  50.382968
+                ],
+                "modifier": "straight",
+                "type": "exit roundabout"
+              },
+              "name": "вулиця Докії Гуменної",
+              "mode": "driving",
+              "weight": 2.9,
+              "duration": 2.9,
+              "distance": 32.6
+            },
+            {
+              "intersections": [
+                {
+                  "in": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    186
+                  ],
+                  "location": [
+                    30.452601,
+                    50.383259
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.452601,
+                    50.383259
+                  ],
+                  [
+                    30.452601,
+                    50.383259
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 6,
+                "location": [
+                  30.452601,
+                  50.383259
+                ],
+                "type": "arrive"
+              },
+              "name": "вулиця Докії Гуменної",
+              "mode": "driving",
+              "weight": 0,
+              "duration": 0,
+              "distance": 0
+            }
+          ]
+        },
+        {
+          "distance": 117.9,
+          "annotation": {
+            "metadata": {
+              "datasource_names": [
+                "lua profile"
+              ]
+            },
+            "datasources": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "weight": [
+              1.3,
+              0.5,
+              0.5,
+              0.7,
+              2.1,
+              3.7,
+              1.9
+            ],
+            "nodes": [
+              354976022,
+              4794259321,
+              11171489330,
+              4794258120,
+              1259426219,
+              354975837,
+              1256841238,
+              1259425997
+            ],
+            "distance": [
+              14.43457061,
+              5.563973889,
+              5.359493824,
+              7.75941501,
+              23.78355401,
+              40.88946521,
+              20.07736925
+            ],
+            "duration": [
+              1.3,
+              0.5,
+              0.5,
+              0.7,
+              2.1,
+              3.7,
+              1.9
+            ],
+            "speed": [
+              11.1,
+              11.1,
+              10.7,
+              11.1,
+              11.3,
+              11.1,
+              10.6
+            ]
+          },
+          "duration": 10.7,
+          "summary": "вулиця Докії Гуменної",
+          "weight": 10.7,
+          "steps": [
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    6
+                  ],
+                  "location": [
+                    30.452601,
+                    50.383259
+                  ]
+                },
+                {
+                  "out": 0,
+                  "in": 1,
+                  "entry": [
+                    true,
+                    false,
+                    false,
+                    false
+                  ],
+                  "bearings": [
+                    45,
+                    225,
+                    240,
+                    330
+                  ],
+                  "location": [
+                    30.452989,
+                    50.383683
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.452601,
+                    50.383259
+                  ],
+                  [
+                    30.452623,
+                    50.383388
+                  ],
+                  [
+                    30.452645,
+                    50.383436
+                  ],
+                  [
+                    30.452687,
+                    50.383476
+                  ],
+                  [
+                    30.452769,
+                    50.383522
+                  ],
+                  [
+                    30.452989,
+                    50.383683
+                  ],
+                  [
+                    30.453431,
+                    50.383918
+                  ],
+                  [
+                    30.453639,
+                    50.38404
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 6,
+                "bearing_before": 0,
+                "location": [
+                  30.452601,
+                  50.383259
+                ],
+                "type": "depart"
+              },
+              "name": "вулиця Докії Гуменної",
+              "mode": "driving",
+              "weight": 10.7,
+              "duration": 10.7,
+              "distance": 117.9
+            },
+            {
+              "intersections": [
+                {
+                  "in": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    227
+                  ],
+                  "location": [
+                    30.453639,
+                    50.38404
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.453639,
+                    50.38404
+                  ],
+                  [
+                    30.453639,
+                    50.38404
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 47,
+                "location": [
+                  30.453639,
+                  50.38404
+                ],
+                "type": "arrive"
+              },
+              "name": "вулиця Докії Гуменної",
+              "mode": "driving",
+              "weight": 0,
+              "duration": 0,
+              "distance": 0
+            }
+          ]
+        },
+        {
+          "distance": 118.6,
+          "annotation": {
+            "metadata": {
+              "datasource_names": [
+                "lua profile"
+              ]
+            },
+            "datasources": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "weight": [
+              0.6,
+              1.9,
+              0.9,
+              0.3,
+              2.3,
+              0.4,
+              2
+            ],
+            "nodes": [
+              1256841238,
+              1259425997,
+              354976401,
+              3791161184,
+              3619120421,
+              1434998074,
+              1259450862,
+              3619120430
+            ],
+            "distance": [
+              7.165431411,
+              21.65566342,
+              13.40886209,
+              4.890349065,
+              35.33152596,
+              5.377188012,
+              30.73943298
+            ],
+            "duration": [
+              0.6,
+              1.9,
+              0.9,
+              0.3,
+              2.3,
+              0.4,
+              2
+            ],
+            "speed": [
+              11.9,
+              11.4,
+              14.9,
+              16.3,
+              15.4,
+              13.4,
+              15.4
+            ]
+          },
+          "duration": 10.4,
+          "summary": "вулиця Докії Гуменної, вулиця Степана Рудницького",
+          "weight": 10.4,
+          "steps": [
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    48
+                  ],
+                  "location": [
+                    30.453639,
+                    50.38404
+                  ]
+                },
+                {
+                  "out": 0,
+                  "in": 1,
+                  "entry": [
+                    true,
+                    false,
+                    true
+                  ],
+                  "bearings": [
+                    45,
+                    225,
+                    300
+                  ],
+                  "location": [
+                    30.453942,
+                    50.384212
+                  ]
+                },
+                {
+                  "out": 0,
+                  "in": 1,
+                  "entry": [
+                    true,
+                    false,
+                    true
+                  ],
+                  "bearings": [
+                    45,
+                    225,
+                    315
+                  ],
+                  "location": [
+                    30.454519,
+                    50.384522
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.453639,
+                    50.38404
+                  ],
+                  [
+                    30.453714,
+                    50.384083
+                  ],
+                  [
+                    30.453942,
+                    50.384212
+                  ],
+                  [
+                    30.454092,
+                    50.384285
+                  ],
+                  [
+                    30.454145,
+                    50.384313
+                  ],
+                  [
+                    30.454519,
+                    50.384522
+                  ],
+                  [
+                    30.454577,
+                    50.384553
+                  ],
+                  [
+                    30.454898,
+                    50.384738
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 48,
+                "bearing_before": 0,
+                "location": [
+                  30.453639,
+                  50.38404
+                ],
+                "type": "depart"
+              },
+              "name": "вулиця Докії Гуменної",
+              "mode": "driving",
+              "weight": 10.4,
+              "duration": 10.4,
+              "distance": 118.6
+            },
+            {
+              "intersections": [
+                {
+                  "in": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    228
+                  ],
+                  "location": [
+                    30.454898,
+                    50.384738
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.454898,
+                    50.384738
+                  ],
+                  [
+                    30.454898,
+                    50.384738
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 48,
+                "location": [
+                  30.454898,
+                  50.384738
+                ],
+                "type": "arrive"
+              },
+              "name": "вулиця Степана Рудницького",
+              "mode": "driving",
+              "weight": 0,
+              "duration": 0,
+              "distance": 0
+            }
+          ]
+        },
+        {
+          "distance": 110.3,
+          "annotation": {
+            "metadata": {
+              "datasource_names": [
+                "lua profile"
+              ]
+            },
+            "datasources": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "weight": [
+              1.8,
+              2.4,
+              1,
+              1.2,
+              0.4,
+              0.5
+            ],
+            "nodes": [
+              1259450862,
+              3619120430,
+              3791161188,
+              354976386,
+              1622249370,
+              2406019568,
+              2078562578
+            ],
+            "distance": [
+              26.7113784,
+              36.33963241,
+              15.37303247,
+              18.09761985,
+              5.738201405,
+              8.087955662
+            ],
+            "duration": [
+              1.8,
+              2.4,
+              1,
+              1.2,
+              0.4,
+              0.5
+            ],
+            "speed": [
+              14.8,
+              15.1,
+              15.4,
+              15.1,
+              14.3,
+              16.2
+            ]
+          },
+          "duration": 9.3,
+          "summary": "вулиця Степана Рудницького",
+          "weight": 9.3,
+          "steps": [
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    48
+                  ],
+                  "location": [
+                    30.454898,
+                    50.384738
+                  ]
+                },
+                {
+                  "out": 0,
+                  "in": 2,
+                  "entry": [
+                    true,
+                    true,
+                    false
+                  ],
+                  "bearings": [
+                    45,
+                    135,
+                    225
+                  ],
+                  "location": [
+                    30.455732,
+                    50.385199
+                  ]
+                },
+                {
+                  "out": 0,
+                  "in": 1,
+                  "entry": [
+                    true,
+                    false,
+                    false
+                  ],
+                  "bearings": [
+                    45,
+                    225,
+                    315
+                  ],
+                  "location": [
+                    30.455925,
+                    50.385305
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.454898,
+                    50.384738
+                  ],
+                  [
+                    30.455178,
+                    50.384898
+                  ],
+                  [
+                    30.455568,
+                    50.385109
+                  ],
+                  [
+                    30.455732,
+                    50.385199
+                  ],
+                  [
+                    30.455925,
+                    50.385305
+                  ],
+                  [
+                    30.455987,
+                    50.385338
+                  ],
+                  [
+                    30.456071,
+                    50.385387
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 48,
+                "bearing_before": 0,
+                "location": [
+                  30.454898,
+                  50.384738
+                ],
+                "type": "depart"
+              },
+              "name": "вулиця Степана Рудницького",
+              "mode": "driving",
+              "weight": 9.3,
+              "duration": 9.3,
+              "distance": 110.3
+            },
+            {
+              "intersections": [
+                {
+                  "in": 0,
+                  "entry": [
+                    true
+                  ],
+                  "bearings": [
+                    228
+                  ],
+                  "location": [
+                    30.456071,
+                    50.385387
+                  ]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.456071,
+                    50.385387
+                  ],
+                  [
+                    30.456071,
+                    50.385387
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 48,
+                "location": [
+                  30.456071,
+                  50.385387
+                ],
+                "type": "arrive"
+              },
+              "name": "вулиця Степана Рудницького",
+              "mode": "driving",
+              "weight": 0,
+              "duration": 0,
+              "distance": 0
+            }
+          ]
+        }
+      ],
+      "weight_name": "routability",
+      "geometry": {
+        "coordinates": [
+          [
+            30.457821,
+            50.37856
+          ],
+          [
+            30.457523,
+            50.378775
+          ],
+          [
+            30.457447,
+            50.378817
+          ],
+          [
+            30.457347,
+            50.378862
+          ],
+          [
+            30.457273,
+            50.378914
+          ],
+          [
+            30.456925,
+            50.379165
+          ],
+          [
+            30.456517,
+            50.379466
+          ],
+          [
+            30.455775,
+            50.380018
+          ],
+          [
+            30.455477,
+            50.380236
+          ],
+          [
+            30.455309,
+            50.380359
+          ],
+          [
+            30.455296,
+            50.380369
+          ],
+          [
+            30.455118,
+            50.380498
+          ],
+          [
+            30.454925,
+            50.380631
+          ],
+          [
+            30.45465,
+            50.380834
+          ],
+          [
+            30.454386,
+            50.381028
+          ],
+          [
+            30.454227,
+            50.381147
+          ],
+          [
+            30.454078,
+            50.381257
+          ],
+          [
+            30.45369,
+            50.381544
+          ],
+          [
+            30.453391,
+            50.38177
+          ],
+          [
+            30.452963,
+            50.382079
+          ],
+          [
+            30.452849,
+            50.382158
+          ],
+          [
+            30.452782,
+            50.382239
+          ],
+          [
+            30.452659,
+            50.382387
+          ],
+          [
+            30.452573,
+            50.382453
+          ],
+          [
+            30.452526,
+            50.382514
+          ],
+          [
+            30.452512,
+            50.382586
+          ],
+          [
+            30.452547,
+            50.382928
+          ],
+          [
+            30.452552,
+            50.382968
+          ],
+          [
+            30.452601,
+            50.383259
+          ],
+          [
+            30.452623,
+            50.383388
+          ],
+          [
+            30.452645,
+            50.383436
+          ],
+          [
+            30.452687,
+            50.383476
+          ],
+          [
+            30.452769,
+            50.383522
+          ],
+          [
+            30.452989,
+            50.383683
+          ],
+          [
+            30.453431,
+            50.383918
+          ],
+          [
+            30.453639,
+            50.38404
+          ],
+          [
+            30.453714,
+            50.384083
+          ],
+          [
+            30.453942,
+            50.384212
+          ],
+          [
+            30.454092,
+            50.384285
+          ],
+          [
+            30.454145,
+            50.384313
+          ],
+          [
+            30.454519,
+            50.384522
+          ],
+          [
+            30.454577,
+            50.384553
+          ],
+          [
+            30.454898,
+            50.384738
+          ],
+          [
+            30.455178,
+            50.384898
+          ],
+          [
+            30.455568,
+            50.385109
+          ],
+          [
+            30.455732,
+            50.385199
+          ],
+          [
+            30.455925,
+            50.385305
+          ],
+          [
+            30.455987,
+            50.385338
+          ],
+          [
+            30.456071,
+            50.385387
+          ]
+        ],
+        "type": "LineString"
+      },
+      "weight": 94.3,
+      "duration": 94.3,
+      "distance": 1010.4
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "C7Qlgf___38OAAAAKwAAAAAAAAAOAAAAMWh7QSSr_0EAAAAAhn99QQ4AAAArAAAAAAAAAA4AAAC2EwEA3b_QAUC3AAPsv9ABSLcAAwAA7xMAAAAA",
+      "location": [
+        30.457821,
+        50.37856
+      ],
+      "name": "вулиця Героїв Маріуполя",
+      "distance": 1.389422947
+    },
+    {
+      "hint": "brQlgTNhT4YRAAAAAgAAAAAAAABBAAAAeRmZQSYpuT8AAAAAoIBJQhEAAAACAAAAAAAAAEEAAAC2EwEAALbQAVG-AAMNttABWL4AAwAArwgAAAAA",
+      "location": [
+        30.455296,
+        50.380369
+      ],
+      "name": "вулиця Героїв Маріуполя",
+      "distance": 1.20892957
+    },
+    {
+      "hint": "gqENg52hDYMOAAAAJwAAAAAAAAAAAAAA7IGBQdXOKEIAAAAAAAAAAA4AAAAnAAAAAAAAAAAAAAC2EwEAPrHQAcnBAANDsdABzMEAAwAA_xMAAAAA",
+      "location": [
+        30.454078,
+        50.381257
+      ],
+      "name": "вулиця Героїв Маріуполя",
+      "distance": 0.4877209822
+    },
+    {
+      "hint": "G7Qlgf___38JAAAAGgAAAAAAAAA5AAAA1RYjQVYmlUEAAAAAVEN9QgkAAAAaAAAAAAAAADkAAAC2EwEALqzQAZ_FAAM1rNABocUAAwAAzxQAAAAA",
+      "location": [
+        30.452782,
+        50.382239
+      ],
+      "name": "вулиця Героїв Маріуполя",
+      "distance": 0.5453933959
+    },
+    {
+      "hint": "XLQlgf___38dAAAAKgAAAAAAAAAmAAAAQjoCQgD0ZkEAAAAAot0pQh0AAAAqAAAAAAAAACYAAAC2EwEAeavQAZvJAAN0q9ABm8kAAwAAbwAAAAAA",
+      "location": [
+        30.452601,
+        50.383259
+      ],
+      "name": "вулиця Докії Гуменної",
+      "distance": 0.3556826674
+    },
+    {
+      "hint": "lLQlgVIoDIMGAAAAEwAAABMAAAAAAAAAN0vlQHSeoEHMPq1BAAAAAAYAAAATAAAAEwAAAAAAAAC2EwEAh6_QAajMAAOBr9ABrMwAAwIAPw4AAAAA",
+      "location": [
+        30.453639,
+        50.38404
+      ],
+      "name": "вулиця Докії Гуменної",
+      "distance": 0.6165637049
+    },
+    {
+      "hint": "F6oNgypeBYgUAAAAEgAAAAAAAAAAAAAAXOr1Qeew1UEAAAAAAAAAABQAAAASAAAAAAAAAAAAAAC2EwEAcrTQAWLPAAN2tNABX88AAwAADwMAAAAA",
+      "location": [
+        30.454898,
+        50.384738
+      ],
+      "name": "вулиця Степана Рудницького",
+      "distance": 0.4385522761
+    },
+    {
+      "hint": "ohnlg055GoUFAAAAFAAAAAQAAAAAAAAARGgBQWSC8EFZn7dAAAAAAAUAAAAUAAAABAAAAAAAAAC2EwEAB7nQAevRAAMGudAB7NEAAwIA_wIAAAAA",
+      "location": [
+        30.456071,
+        50.385387
+      ],
+      "name": "вулиця Степана Рудницького",
+      "distance": 0.1320375593
+    }
+  ]
+}
