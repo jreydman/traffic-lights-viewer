@@ -27,7 +27,7 @@ export function useAppContext() {
 export function useCreateAppContext(): AppContextType {
   const [mapViewState, setMapViewState] = React.useState<MapViewStateType>({
     ...KyivCityCenterPoint,
-    zoom: 10,
+    zoom: 15,
   });
 
   const [bboxRegionState, setBBoxRegionState] =

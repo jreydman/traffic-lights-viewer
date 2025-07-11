@@ -1,3 +1,4 @@
+import getWaymapSignalsRequestOpts from "../waymapSignalRequestOpts";
 import waymap from "../tests/waymap.json";
 import axios from "axios";
 import fs from "fs";
@@ -15,18 +16,6 @@ const query = `
 out body;
 `;
 
-function getWaymapSignalsRequestOpts(query: string) {
-  const url = `https://overpass-api.de/api/interpreter`;
-
-  return {
-    url: url,
-    method: "GET",
-    params: {
-      data: `${query}`,
-    },
-  };
-}
-
 const waymapSignalsRequestOpts = getWaymapSignalsRequestOpts(query);
 
 console.log(query);
@@ -34,8 +23,6 @@ console.log(query);
 console.log(axios.getUri(waymapSignalsRequestOpts));
 
 const response = await axios.request(waymapSignalsRequestOpts);
-
-// записываем результат в файл
 
 fs.writeFileSync(
   "src/tests/waymapSignals.json",

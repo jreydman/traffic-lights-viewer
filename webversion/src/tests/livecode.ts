@@ -1,2 +1,3 @@
-import "./getWaymap";
-import "./getWaymapSignals";
+// import "./getWaymap";
+// import "./getWaymapSignals";
+import "./getWaymapSignalRoute";
