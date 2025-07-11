@@ -1,7 +1,7 @@
 import WaypointSelectionToggleButton from "@src/components/WaypointSelectionToggleButton";
 import WaypointSelectionClearButton from "./WaypointSelectionClearButton";
 import { useAppContext } from "@src/AppContext";
-import BuildDiagramButton from "./BuildDiagramButton";
+import DiagramVisibilityToggleButton from "./BuildDiagramButton";
 
 export default function Header() {
   const { waypointsVector } = useAppContext();
@@ -13,7 +13,7 @@ export default function Header() {
         <nav className="flex space-x-4">
           <WaypointSelectionToggleButton />
           <WaypointSelectionClearButton />
-          {waypointsVector.length >= 2 && <BuildDiagramButton />}
+          {waypointsVector.length >= 2 && <DiagramVisibilityToggleButton />}
         </nav>
       </div>
     </header>

@@ -67,7 +67,6 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
         }
       }
 
-      // Построение правильной nodeId → координатный индекс мапы
       const nodeIdToCoordIndex = new Map<number, number>();
       let coordIdx = 0;
       for (const leg of route.legs) {
@@ -83,7 +82,6 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
 
       const features: Feature[] = [];
 
-      // Стартовый маркер
       features.push({
         type: "Feature",
         geometry: { type: "Point", coordinates: coordinates[0] },
@@ -151,7 +149,6 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
         }
       }
 
-      // Последний сектор
       if (sectorStartCoordIndex < coordinates.length - 1) {
         const distSlice = distances.slice(sectorStartCoordIndex);
         const durSlice = durations.slice(sectorStartCoordIndex);
@@ -189,7 +186,6 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
         }
       }
 
-      // Финальный маркер
       features.push({
         type: "Feature",
         geometry: {
