@@ -2,33 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import type { PointType } from "@src/types";
 import type { Feature, LineString, Point } from "geojson";
-
-function getWaymapRequestOpts(waypoints: PointType[]) {
-  const coords = waypoints.map((p) => `${p.longitude},${p.latitude}`).join(";");
-  const url = `https://router.project-osrm.org/route/v1/driving/${coords}`;
-
-  return {
-    url,
-    method: "GET",
-    params: {
-      overview: "full",
-      geometries: "geojson",
-      annotations: "true",
-      steps: "true",
-    },
-  };
-}
-
-function getWaymapSignalsRequestOpts(query: string) {
-  return {
-    url: `https://overpass-api.de/api/interpreter`,
-    method: "POST",
-    headers: {
-      "Content-Type": "text/plain",
-    },
-    data: query,
-  };
-}
+import getWaymapRequestOpts from "./waymapRequestOpts";
+import getWaymapSignalsRequestOpts from "./waymapSignalRequestOpts";
 
 export function useOverpassRouteQuery(waypointsVector: PointType[]) {
   return useQuery({
@@ -41,14 +16,14 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
 
       if (!route || !route.geometry) throw new Error("No route found");
 
-      const coordinates = route.geometry.coordinates; // все точки маршрута
+      const coordinates: [number, number][] = route.geometry.coordinates;
 
-      // Все ноды с аннотаций
-      const nodes: number[] = [
+      const nodes = [
         ...new Set(
           route.legs.flatMap((leg: any) => leg.annotation?.nodes || []),
         ),
       ];
+
       const distances: number[] = route.legs.flatMap(
         (leg: any) => leg.annotation?.distance || [],
       );
@@ -56,17 +31,8 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
         (leg: any) => leg.annotation?.duration || [],
       );
 
-      // Для сбора улиц: список шагов всех ног (legs)
-      // Каждый step имеет name, distance, duration, geometry
-      // Нам нужно синхронизировать индексы step и индексы координат / нод
-      type StepInfo = {
-        name: string;
-        // сколько координат в шаге (geometry.coordinates.length)
-        length: number;
-      };
+      type StepInfo = { name: string; length: number };
       const steps: StepInfo[] = [];
-
-      // Соберём steps по порядку
       for (const leg of route.legs) {
         for (const step of leg.steps) {
           steps.push({
@@ -76,18 +42,15 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
         }
       }
 
-      // Создадим массив, который для каждого индекса координаты укажет имя улицы
-      // Индексы координат шага идут подряд, суммируем length шагов
       const streetForCoordIndex: string[] = [];
 
-      let coordIndexCursor = 0;
+      let coordCursor = 0;
       for (const step of steps) {
         for (let i = 0; i < step.length; i++) {
-          streetForCoordIndex[coordIndexCursor++] = step.name;
+          streetForCoordIndex[coordCursor++] = step.name;
         }
       }
 
-      // Получаем светофоры из Overpass по нодам
       const query = `
         [out:json][timeout:25];
         (
@@ -107,64 +70,73 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
         }
       }
 
+      const nodeIdToCoordIndex = new Map<number, number>();
+      nodes.forEach((nodeId, idx) => {
+        nodeIdToCoordIndex.set(nodeId, idx);
+      });
+
+      // Формируем features
       const features: Feature[] = [];
 
-      // Стартовый маркер
+      // Добавляем стартовый маркер
       features.push({
         type: "Feature",
         geometry: { type: "Point", coordinates: coordinates[0] },
         properties: { type: "marker", role: "start" },
       });
 
-      let sectorCoords: number[][] = [coordinates[0]];
+      let sectorStartCoordIndex = 0; // индекс начала текущего сектора в coordinates
       let totalDist = 0;
       let totalDur = 0;
 
-      // Для улиц внутри сектора — собираем по координатным индексам
-      let sectorStartCoordIndex = 0;
+      // Перебираем ноды и разбиваем на сектора по светофорам
+      for (let i = 1; i < nodes.length; i++) {
+        const nodeId = nodes[i];
+        const coordIndex = nodeIdToCoordIndex.get(nodeId) ?? i;
 
-      for (let i = 0; i < nodes.length - 1; i++) {
-        const coordNext = coordinates[i + 1];
-        const nodeNext = nodes[i + 1];
+        // Накапливаем dist и dur между sectorStartCoordIndex и coordIndex
+        for (let d = sectorStartCoordIndex; d < coordIndex; d++) {
+          totalDist += distances[d] || 0;
+          totalDur += durations[d] || 0;
+        }
 
-        sectorCoords.push(coordNext);
-        totalDist += distances[i];
-        totalDur += durations[i];
+        const signal = signalNodes.get(nodeId);
 
-        // Если светофор на этой ноде — закроем сектор
-        const signal = signalNodes.get(nodeNext);
         if (signal) {
-          // Получим индекс координаты конца сектора (i+1)
-          const sectorEndCoordIndex = i + 1;
+          // Срез координат сектора: от sectorStartCoordIndex до coordIndex включительно
+          const sectorCoords = coordinates.slice(
+            sectorStartCoordIndex,
+            coordIndex + 1,
+          );
 
-          // Соберём уникальные улицы из streetForCoordIndex в этом диапазоне
+          // Собираем имена улиц для сектора
           const streetsSet = new Set<string>();
           for (
-            let idx = sectorStartCoordIndex;
-            idx <= sectorEndCoordIndex && idx < streetForCoordIndex.length;
-            idx++
+            let si = sectorStartCoordIndex;
+            si <= coordIndex && si < streetForCoordIndex.length;
+            si++
           ) {
-            streetsSet.add(streetForCoordIndex[idx]);
+            streetsSet.add(streetForCoordIndex[si]);
           }
 
-          const streetNames = Array.from(streetsSet);
+          // Добавляем сектор если хватает точек
+          if (sectorCoords.length >= 2) {
+            features.push({
+              type: "Feature",
+              geometry: {
+                type: "LineString",
+                coordinates: sectorCoords,
+              },
+              properties: {
+                type: "sector",
+                distance: totalDist,
+                duration: totalDur,
+                streetNames: Array.from(streetsSet),
+              },
+            });
+          }
 
-          // Добавим сектор с улицами
-          features.push({
-            type: "Feature",
-            geometry: {
-              type: "LineString",
-              coordinates: [...sectorCoords],
-            },
-            properties: {
-              type: "sector",
-              distance: totalDist,
-              duration: totalDur,
-              streetNames,
-            },
-          });
-
-          // светофор
+          // Добавляем светофор
           features.push({
             type: "Feature",
             geometry: {
@@ -178,52 +150,50 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
             },
           });
 
-          // сбросим
-          sectorCoords = [coordNext];
+          // Сброс счётчиков и обновление начала сектора
+          sectorStartCoordIndex = coordIndex;
           totalDist = 0;
           totalDur = 0;
-          sectorStartCoordIndex = sectorEndCoordIndex;
         }
       }
 
-      // Финальный сектор от последнего светофора до конца маршрута
+      // Добавляем последний сектор (после последнего светофора до конца маршрута)
+      if (sectorStartCoordIndex < coordinates.length - 1) {
+        // Накапливаем dist/dur с последнего сектора до конца
+        for (let d = sectorStartCoordIndex; d < distances.length; d++) {
+          totalDist += distances[d] || 0;
+          totalDur += durations[d] || 0;
+        }
 
-      const lastCoord = coordinates[coordinates.length - 1];
-      const lastCoordInSector = sectorCoords[sectorCoords.length - 1];
+        const sectorCoords = coordinates.slice(
+          sectorStartCoordIndex,
+          coordinates.length,
+        );
 
-      if (
-        !(
-          lastCoordInSector[0] === lastCoord[0] &&
-          lastCoordInSector[1] === lastCoord[1]
-        )
-      ) {
-        sectorCoords.push(lastCoord);
-      }
+        const streetsSet = new Set<string>();
+        for (
+          let si = sectorStartCoordIndex;
+          si < streetForCoordIndex.length;
+          si++
+        ) {
+          streetsSet.add(streetForCoordIndex[si]);
+        }
 
-      // Улица для финального сектора — от sectorStartCoordIndex до конца
-      const streetNames = new Set<string>();
-      for (
-        let idx = sectorStartCoordIndex;
-        idx < streetForCoordIndex.length && idx < coordinates.length;
-        idx++
-      ) {
-        streetNames.add(streetForCoordIndex[idx]);
-      }
-
-      if (sectorCoords.length >= 2) {
-        features.push({
-          type: "Feature",
-          geometry: {
-            type: "LineString",
-            coordinates: [...sectorCoords],
-          },
-          properties: {
-            type: "sector",
-            distance: totalDist,
-            duration: totalDur,
-            streetNames: Array.from(streetNames),
-          },
-        });
+        if (sectorCoords.length >= 2) {
+          features.push({
+            type: "Feature",
+            geometry: {
+              type: "LineString",
+              coordinates: sectorCoords,
+            },
+            properties: {
+              type: "sector",
+              distance: totalDist,
+              duration: totalDur,
+              streetNames: Array.from(streetsSet),
+            },
+          });
+        }
       }
 
       // Финальный маркер
@@ -231,7 +201,7 @@ export function useOverpassRouteQuery(waypointsVector: PointType[]) {
         type: "Feature",
         geometry: {
           type: "Point",
-          coordinates: lastCoord,
+          coordinates: coordinates[coordinates.length - 1],
         },
         properties: { type: "marker", role: "end" },
       });

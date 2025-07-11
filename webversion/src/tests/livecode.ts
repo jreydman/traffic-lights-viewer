@@ -1,2 +1,2 @@
-// import "./getWaymap";
+import "./getWaymap";
 import "./getWaymapSignals";
